@@ -65,13 +65,13 @@ main {
 .cycleList > ul > li {
   border: 1px solid #F8C417;
   border-radius: .5rem;
- box-shadow: 8px 20px 18px #656636; 
+ box-shadow: 5px 20px 18px #656636; 
 }
 
 .cycleList > ul > li > figure {
   min-height:10vh;
  position: relative;
-  margin: 1%;
+  margin: 2%;
   background-color:white;
   transition: transform .2s;
   border: 0.1px solid #444F22;
@@ -133,10 +133,13 @@ main {
     padding: 1rem 6rem;
   }
 .cycleList {
-   padding: 0.5rem;
+   padding: 1rem 1em 2em 1em ;
+}
+.cycleList > ul {
+  margin: 1% 0 0 0;
 }
 .cycleList > ul > li > figure:hover {
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 }
 
