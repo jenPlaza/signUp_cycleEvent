@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+background-color: #444F22;
+}
+main {
+  margin: 0;
+  padding:0;
+  margin:auto;
+  overflow:hidden;
+}
+
+/*  mobile device layout modifications*/
+.container {
+    /* Photo by munbaik on Unsplash */
+  background: url('./images/Cyclist.png') center;
+  background-size: cover;
+  min-width: 375px;
+  min-height:60vh;
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.logo{
+ position:absolute;
+ top: 10px;
+}
+
+.biker {
+   padding: 2rem; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  align-items: center;
+}
+
+.biker > * {
+  color: #F8C417;
+}
+
+.biker > h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.biker > article > q {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.cycleList > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  list-style-type: none;
+  margin: 2% 0 0 0;
+  padding: 0;
+}
+
+/* cycleList container items*/
+.cycleList > ul > li {
+  border: 1px solid #F8C417;
+  border-radius: .5rem;
+ box-shadow: 8px 20px 18px #656636; 
+}
+
+.cycleList > ul > li > figure {
+  min-height:10vh;
+ position: relative;
+  margin: 2%;
+  background-color:white;
+  transition: transform .2s;
+  border: 0.1px solid #444F22;
+}
+
+.cycleList > ul > li > figure > img {
+  width: 100%;
+}
+
+.cycleList > ul > li > figure:hover {
+  transform: scale(1.1);
+  z-index: 100;
+}
+
+.cycleList > ul > li > figure figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility:hidden;
+  background-color: rgba(55,61,36,.7);
+  font-size: 1.25rem;
+  color:white;
+}
+
+.cycleList > ul > li > figure:hover figcaption {
+  visibility:visible; 
+}
+
+/*  small device layout modifications*/
+@media (min-width: 768px) {
+  .container {
+    min-height:35vh;
+  }
+  .biker > h1 {
+    font-size: 3rem;
+  }
+  .biker > article > q {
+    font-size: 1.75rem;
+  }
+  .cycleList > ul > li > figure:hover {
+    transform: scale(1.2);
+  }
+}
+
+/*  md device layout modifications*/
+@media (min-width: 992px) {
+  .biker {
+    padding: 1rem 4rem;
+  }
+}
+
+/*  lg platform class modification*/
+@media (min-width: 1200px) {
+  .biker {
+    padding: 1rem 6rem;
+  }
+.cycleList {
+   padding: 2rem;
+}
+.cycleList > ul > li > figure:hover {
+  transform: scale(1.3);
+}
+}
+
+/* x- lg platform class modification*/
+@media (min-width: 1500px) {
+  .biker {
+    padding: 1rem 15rem;
+  }
+}
