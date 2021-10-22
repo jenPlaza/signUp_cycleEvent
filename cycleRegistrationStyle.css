@@ -83,7 +83,7 @@ main {
 
 .cycleList > ul > li > figure:hover {
   transform: scale(1.1);
-  z-index: 100;
+  z-index: 1;
 }
 
 .cycleList > ul > li > figure figcaption {
@@ -104,6 +104,44 @@ main {
   visibility:visible; 
 }
 
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  padding-top:20%;
+  left: 0;
+  top: 0%; 
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0,0.6); 
+}
+
+.modalBody {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  z-index:100;
+}
+
+/* close button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*  small device layout modifications*/
 @media (min-width: 768px) {
   .container {
@@ -115,6 +153,9 @@ main {
   .biker > article > q {
     font-size: 1.75rem;
   }
+  .cycleList {
+    padding: 0 0 1em 0 ;
+ }
   .cycleList > ul > li > figure:hover {
     transform: scale(1.2);
   }
