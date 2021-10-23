@@ -24,11 +24,14 @@ function getRegistered() {
     
   //injecting new form element.
   registration += '<div class="modalBody">';
-     registration += '<fieldset>'; 
+  registration += '<fieldset class="field1">';
   registration += '<span class="close" onclick="closeForm()">&times;</span>';
+  registration += '<h2><b>Trike Registration Form</b></h2>';
   registration += '</fieldset>';
+  
   registration += '<form class="registerForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">';
   registration += '<div>';
+ 
    registration += '<input type=hidden name="oid" value="00D410000008Th8">';
   registration += '<input type=hidden name="retURL" value="http://https://forgottennotgone.org/">';
 
