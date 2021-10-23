@@ -15,108 +15,89 @@ function imageDisplay() {
 }
 imageDisplay();
 
-
 function closeForm(){
   document.querySelector(".modalForm").style.display = "none";
 }
-
 function getRegistered() {
   var registration ='<section id="cycleRegistrationForm" class="modalForm">';
      document.querySelector(".modalForm").style.display = "block"; 
     
   //injecting new form element.
   registration += '<div class="modalBody">';
+     registration += '<fieldset>'; 
   registration += '<span class="close" onclick="closeForm()">&times;</span>';
-   registration += '<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">';
+  registration += '</fieldset>';
+  registration += '<form class="registerForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">';
+  registration += '<div>';
    registration += '<input type=hidden name="oid" value="00D410000008Th8">';
-    registration += '<input type=hidden name="retURL" value="http://https://forgottennotgone.org/">';
-  
+  registration += '<input type=hidden name="retURL" value="http://https://forgottennotgone.org/">';
+
         {/*   ----------------------------------------------------------------------  
  NOTE: These fields are optional debugging elements. Please uncomment    
   these lines if you wish to test in debug mode.   */}                     
-{/*  <input type="hidden" name="debug" value=1>                              
- <input type="hidden" name="debugEmail"                                
- value="niranjan@astroforcesolutions.com">   */}                            
-{/*   ----------------------------------------------------------------------  */} 
-
+{/* 
+   registration += '<input type="hidden" name="debug" value=1>';                              
+ registration += '<input type="hidden" name="debugEmail"                                
+ value="niranjan@astroforcesolutions.com">';   
+*/}                            
+  {/*   ----------------------------------------------------------------------  */ }
+  
+  registration += '<fieldset>';
+  registration += '<h4>Personal Information</h4>';  
       /* First Name: */
  registration += '<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />';
 
       /* Last Name: */
- registration += '<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />';
-
-      /* Company: */
- registration +='<label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" />';
+  registration += '<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />';
+  
+        /* Birth Date: */
+        registration +='<label for="00N3f000000uZR9">Birth Date:</label>';
+  registration += '<span class="dateInput dateOnlyInput"><input  id="00N3f000000uZR9" name="00N3f000000uZR9" size="12" type="text" /></span>';
+  
+    /* Gender: */
+    registration +='<label for="00N3f000000uZRE">Gender:</label>';
+    registration += '<select  id="00N3f000000uZRE" name="00N3f000000uZRE" title="Gender">';
+    registration +=' < option value = "" > --None--</option >';
+    registration +=' <option value="Male">Male</option>';
+    registration +=' <option value="Female">Female</option>';
+  registration +=' </select>';
 
       /* Email: */
   registration +='<label for="00N3f000000uZR4">Email:</label>';
-   registration +='<input  id="00N3f000000uZR4" maxlength="80" name="00N3f000000uZR4" size="20" type="text" placeholder="Non - Military Email Preferred" />';
+  registration += '<input  id="00N3f000000uZR4" maxlength="80" name="00N3f000000uZR4" size="20" type="text" placeholder="Non - Military Email Preferred" />';
+  
+   {/* Currently Homeless?: */ }
+   registration +='<label for="00N3f000000uZRT">Currently Homeless?:</label>';
+   registration += '<select id="00N3f000000uZRT" name="00N3f000000uZRT" title="Currently Homeless?">';
+   registration += '< option value = "" > --None--</option >';
+   registration += '<option value="No">No</option>';
+   registration += '<option value="Yes">Yes</option>';
+   registration += '</select>';
 
-      /* Birth Date: */
-  registration +='<label for="00N3f000000uZR9">Birth Date:</label>';
- registration +='<span class="dateInput dateOnlyInput"><input  id="00N3f000000uZR9" name="00N3f000000uZR9" size="12" type="text" /></span>';
+      /* Company: */
+      registration +='<label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" />';
 
         /* Street: */
- registration +='<label for="street">Street</label><textarea name="street"></textarea>';
+  registration += '<label>Street:</label><textarea name="street"></textarea></label>';
 
         /* City: */
- registration +='<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" />';
+  registration += '<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" />'; 
+  
+  /* State/Province: */
+  registration += '<label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" />';
 
         /* Zip: */
     registration += '<label for="zip">Zip</label><input  id="zip" maxlength="20" name="zip" size="20" type="text" />';
     
-     /* State/Province: */
- registration +='<label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" />';
-
      /* Country: */
  registration +='<label for="country">Country</label><input  id="country" maxlength="40" name="country" size="20" type="text" />';
 
      /* Mobile: */
  registration +='<label for="mobile">Mobile</label><input  id="mobile" maxlength="40" name="mobile" size="20" type="text" />';
-
-  /* Gender: */
-  registration +='<label for="00N3f000000uZRE">Gender:</label>';
-  registration += '<select  id="00N3f000000uZRE" name="00N3f000000uZRE" title="Gender">';
-  registration +=' < option value = "" > --None--</option >';
-  registration +=' <option value="Male">Male</option>';
-  registration +=' <option value="Female">Female</option>';
-registration +=' </select>';
-
-  {/* Are You Married?: */ }
-  registration +='<label for="00N3f000000uZRJ">Are You Married?:</label>';
-  registration += '<select id="00N3f000000uZRJ" name="00N3f000000uZRJ" title="Are You Married?">';
-  registration +=' < option value = "" > --None--</option >';
-  registration +=' <option value="Single">Single</option>';
-  registration +=' <option value="Married">Married</option>';
-  registration +=' <option value="Divorced">Divorced</option>';
-  registration +=' <option value="Widowed">Widowed</option>';
-  registration +=' </select>';
-
-  {/* Number Of Children: */ }
-  registration +='<label for="00N3f000000uZRO">Number Of Children:</label>';
-     registration +='<input id="00N3f000000uZRO" name="00N3f000000uZRO" size="20" type="text" />';
-
-  {/* Currently Homeless?: */ }
-  registration +='<label for="00N3f000000uZRT">Currently Homeless?:</label>';
-  registration += '<select id="00N3f000000uZRT" name="00N3f000000uZRT" title="Currently Homeless?">';
-  registration += '< option value = "" > --None--</option >';
-  registration += '<option value="No">No</option>';
-  registration += '<option value="Yes">Yes</option>';
-  registration += '</select>';
-
-  {/*  Las Vegas Casino / Sports Team Employee: */ }
-  registration +='<label for="00N3f000000uZRY">Las Vegas Casino / Sports Team Employee:</label>';
-  registration += '<select id="00N3f000000uZRY" name="00N3f000000uZRY" title="Las Vegas Casino / Sports Team Employee">';
-  registration += '< option value = "" > --None--</option >';
-  registration += '<option value="No">No</option>';
-  registration += '<option value="Yes">Yes</option>';
-  registration += '</select>';
-
-  {/*  If so where?: */ }
-  registration +='<label for="00N3f000000uZRd">If so where?:</label>';
-          registration +='<textarea id="00N3f000000uZRd" name="00N3f000000uZRd" rows="3" type="text" wrap="soft"></textarea>';
-        
-
+   registration += '</fieldset>'; 
+          
+   registration += '<fieldset>';
+   registration += '<h4>Military Information</h4>';    
   {/* Branch Of Service: */ }
   registration +='<label for="00N3f000000uZRi">Branch Of Service:</label>';
   registration += '<select id="00N3f000000uZRi" name="00N3f000000uZRi" title="Branch Of Service">';
@@ -197,7 +178,24 @@ registration +=' </select>';
   registration += '<option value="Hearing Impairment">Hearing Impairment</option>';
   registration += '<option value="Other">Other</option>';
   registration += '</select>';
+  registration += '</fieldset>';
 
+  registration += '<fieldset>';
+  registration += '<h4>Marital Status</h4>';      
+  {/* Are You Married?: */ }
+  registration +='<label for="00N3f000000uZRJ">Are You Married?:</label>';
+  registration += '<select id="00N3f000000uZRJ" name="00N3f000000uZRJ" title="Are You Married?">';
+  registration +=' < option value = "" > --None--</option >';
+  registration +=' <option value="Single">Single</option>';
+  registration +=' <option value="Married">Married</option>';
+  registration +=' <option value="Divorced">Divorced</option>';
+  registration +=' <option value="Widowed">Widowed</option>';
+  registration += ' </select>';
+
+  {/* Number Of Children: */ }
+  registration +='<label for="00N3f000000uZRO">Number Of Children:</label>';
+     registration +='<input id="00N3f000000uZRO" name="00N3f000000uZRO" size="20" type="text" />';
+     registration += '<h4>Emergency Contact</h4>';     
   {/*  Emergency Contact First Name: */ }
   registration +='<label for="00N3f000000uZSR">Emergency Contact First Name:</label>';
                               registration +='<input id="00N3f000000uZSR" maxlength="255" name="00N3f000000uZSR" size="20" type="text" />';
@@ -212,8 +210,22 @@ registration +=' </select>';
 
   {/* Emergency Contact Number: */ }
   registration +='<label for="00N3f000000uZSg">Emergency Contact Number:</label>';
-                                     registration +='<input id="00N3f000000uZSg" maxlength="40" name="00N3f000000uZSg" onkeydown="formatPhoneOnEnter(this, event);" size="20" type="text" />';
-
+  registration += '<input id="00N3f000000uZSg" maxlength="40" name="00N3f000000uZSg" onkeydown="formatPhoneOnEnter(this, event);" size="20" type="text" />';
+  registration += '<h4>More Information</h4>';                            
+    {/*  Las Vegas Casino / Sports Team Employee: */ }
+    registration +='<label for="00N3f000000uZRY">Las Vegas Casino / Sports Team Employee:</label>';
+    registration += '<select id="00N3f000000uZRY" name="00N3f000000uZRY" title="Las Vegas Casino / Sports Team Employee">';
+    registration += '< option value = "" > --None--</option >';
+    registration += '<option value="No">No</option>';
+    registration += '<option value="Yes">Yes</option>';
+    registration += '</select>';
+  
+    {/*  If so where?: */ }
+    registration +='<label for="00N3f000000uZRd">If so where?:</label>';
+            registration +='<textarea id="00N3f000000uZRd" name="00N3f000000uZRd" rows="3" type="text" wrap="soft"></textarea>';
+  registration += '</fieldset>';
+  registration += '</div>';
+  registration += '<fieldset class="field6">'; 
   {/* Agreed to LIABILITY WAIVER &amp; ACKNOWLEDGE: */ }
   registration +='<label for="00N3f000000uZSl">Agreed to LIABILITY WAIVER &amp; ACKNOWLEDGE:</label>';
                                        registration +='<input id="00N3f000000uZSl" name="00N3f000000uZSl" type="checkbox" value="1" />';
@@ -227,7 +239,8 @@ registration +=' </select>';
                                            registration +='<span class="dateInput dateOnlyInput"><input id="00N3f000000uZSq" name="00N3f000000uZSq" size="12" type="text" /></span>';
 
                                            registration +='<input type="submit" name="submit">';
-
+  registration += '</fieldset>';
+  
                                            registration +='</form>';
   registration += '</div>';
 registration += '</section>';

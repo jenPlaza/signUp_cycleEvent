@@ -59,6 +59,7 @@ main {
   list-style-type: none;
   margin: 2% 0 0 0;
   padding: 0;
+  
 }
 
 /* cycleList container items*/
@@ -109,9 +110,9 @@ main {
   display: none;
   position: fixed;
   z-index: 1; 
-  padding-top:20%;
+  padding-top:5rem;
   left: 0;
-  top: 0%; 
+  top:0; 
   width: 100%; 
   height: 100%; 
   overflow: auto; 
@@ -120,11 +121,15 @@ main {
 
 .modalBody {
   background-color: #fefefe;
+  max-height:1200px;
   margin: auto;
-  padding: 20px;
+  padding: 10px ;
+  border-radius:8px;
   border: 1px solid #888;
-  width: 80%;
+  width: 90%;
+  height: 100%;
   z-index:100;
+  overflow: auto; 
 }
 
 /* close button */
@@ -133,6 +138,7 @@ main {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  margin-bottom: 1%;
 }
 
 .close:hover,
@@ -140,6 +146,46 @@ main {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* form */
+.registerForm > div {
+  display: flex;
+  flex-wrap: wrap;
+  overflow:auto;
+}
+.registerForm > div > fieldset {
+  min-width: 95%;
+ }
+ fieldset {
+    margin:0;
+    padding:0;
+border:none;
+  }
+
+textarea, select, input[type=text]{
+  width:100%;
+  height:30px;
+  border:0;
+  border-radius:5px;
+  margin: 1% 0 5% 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  padding:0 5px 0 5px;
+}
+input[type=text], textarea {
+  width:96%;
+}
+input[type=submit] {
+  height:45px;
+  border-radius:10px;
+  border: 1px solid #d5d3d3;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  width:100%;
+}
+
+input, textarea {
+  font-family:inherit;
+  font-size: inherit;
 }
 
 /*  small device layout modifications*/
@@ -159,6 +205,15 @@ main {
   .cycleList > ul > li > figure:hover {
     transform: scale(1.2);
   }
+  .field6{
+    margin-top: 5%; 
+      } 
+  input[type=text], textarea {
+    width: 98%;
+}
+textarea, select, input[type=text]{
+  margin: 1% 0 3% 0;
+}
 }
 
 /*  md device layout modifications*/
@@ -166,6 +221,19 @@ main {
   .biker {
     padding: 1rem 4rem;
   }
+
+  .registerForm > div > fieldset {
+    border-right: 25px solid white;
+    border-left: 25px solid white;
+   }
+ .registerForm > div > fieldset {
+  flex: 1;
+min-width: 33.33%; 
+  } 
+  .field6{
+    padding:2%; 
+    margin-top:-1%;
+      } 
 }
 
 /*  lg platform class modification*/
@@ -182,6 +250,15 @@ main {
 .cycleList > ul > li > figure:hover {
   transform: scale(1.2);
 }
+textarea, select, input[type=text]{
+  margin: 1% 0 2% 0;
+}
+input[type=submit] {
+  width:30%;
+}
+.field6{
+  margin-top:1%;
+    } 
 }
 
 /* x- lg platform class modification*/
@@ -189,6 +266,16 @@ main {
   .biker {
     padding: 1rem 15rem;
   }
+
+  .registerForm > div > fieldset {
+    min-width: 25%; 
+      } 
+      .field6{
+        margin-top: 2%; 
+          } 
+         .field6 input[type=text] {
+            width:99%;
+          }
 }
 
 @media (min-width: 2000px) {
@@ -197,5 +284,10 @@ main {
   }
   .biker {
     padding: 1rem 0 4rem 15rem;
+  }
+
+  .field6 input[type=text] {
+    width:100%;
+    margin-bottom: 1%;
   }
 }
