@@ -176,7 +176,6 @@ textarea, input[type=text], select, select:not(select[multiple=multiple] ){
 }
 select[multiple=multiple] {
   border: 1px solid #444f22;
-    height: 175px;
     display: flex;
     margin-top: 1%;
   border-radius:5px;
@@ -250,6 +249,9 @@ min-width: 33.33%;
     padding:2%; 
     margin-top:-1%;
       } 
+      select[multiple=multiple] {
+        height: 175px;
+    }
 }
 
 /*  lg platform class modification*/
@@ -269,6 +271,7 @@ min-width: 33.33%;
 textarea, select, input[type=text]{
   margin: 1% 0 2% 0;
 }
+
 input[type=submit] {
   width:30%;
 }
