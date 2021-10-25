@@ -20,7 +20,7 @@ function closeForm(){
 }
 function getRegistered() {
   var registration ='<section id="cycleRegistrationForm" class="modalForm">';
-     document.querySelector(".modalForm").style.display = "block"; 
+  document.querySelector(".modalForm").style.display = "block";
     
   //injecting new form element.
   registration += '<div class="modalBody">';
@@ -168,7 +168,7 @@ function getRegistered() {
 
   {/*  Injury Information: */ }
   registration +='<label for="00N3f000000uZSM">Injury Information:</label>';
-  registration += '<select id="00N3f000000uZSM" multiple="multiple" name="00N3f000000uZSM" title="Injury Information">';
+  registration += '<select id="00N3f000000uZSM" multiple="multiple" name="00N3f000000uZSM" title="Injury Information size="5">';
   registration += '< option value = "Amputee" > Amputee</option >';
   registration += '<option value="Knees">Knees</option>';
   registration += '<option value="Back">Back</option>';
