@@ -64,7 +64,7 @@ function getRegistered() {
     registration +=' <option value="Male">Male</option>';
     registration +=' <option value="Female">Female</option>';
   registration +=' </select>';
-
+  registration +=' <br />';
       /* Email: */
   registration +='<label for="00N3f000000uZR4">Email:</label>';
   registration += '<input  id="00N3f000000uZR4" maxlength="80" name="00N3f000000uZR4" size="20" type="text" placeholder="Non - Military Email Preferred" />';
