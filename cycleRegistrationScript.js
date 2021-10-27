@@ -33,7 +33,7 @@ function getRegistered() {
   registration += '<div>';
  
    registration += '<input type=hidden name="oid" value="00D410000008Th8">';
-  registration += '<input type=hidden name="retURL" value="http://https://forgottennotgone.org/">';
+  registration += '<input type=hidden name="retURL" value="https://forgottennotgone.org/">';
 
         {/*   ----------------------------------------------------------------------  
  NOTE: These fields are optional debugging elements. Please uncomment    
